@@ -24,11 +24,11 @@ On laptop:
  # create a personal/temporary integration branch (potential updates).
  # We will use this integration branch later.
  cd lsweb
- git checkout -B lancepu gitlab/LS_Stable_v3.0
+ git checkout -B lancepu origin/LS_Stable_v3.0
  git push --set-upstream gitlab lancepu
 
  # fork off stable branch:
- git checkout -B card71 gitlab/LS_Stable_v3.0
+ git checkout -B card71 origin/LS_Stable_v3.0
  git push --set-upstream gitlab card71
  ```
 
