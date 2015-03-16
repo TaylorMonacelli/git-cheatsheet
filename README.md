@@ -130,3 +130,10 @@ Upload your ssh public key to gitlab (same step as step 1 in [how to checkout ls
  git merge origin/master
  git push
  ```
+
+#### recomended stuff ####
+1. tig shows history really nicely
+ ```
+ # osx:
+ brew install tig
+ ```
