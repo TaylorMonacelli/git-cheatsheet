@@ -13,7 +13,7 @@ git maintainers maintain git with this topic branch workflow https://stuff.mit.e
  ```
  git clone git@gitlab.com:streambox/lsweb.git
  cd lsweb
- git branch --all
+ git branch --all # inspect what branches where just cloned (for shits and giggles)
  git checkout --track remotes/origin/LS_Stable_v3.0
 
  ```
@@ -105,6 +105,8 @@ Upload your ssh public key to gitlab (same step as step 1 in [how to checkout ls
  git clone git@gitlab.com:streambox/bcewebui.git
  cd bcewebui
  git checkout --track origin/master
+ # verify what branch I'm on now
+ git branch
 
  # edit, edit, edit
  git commit -am "Fix stuff"
