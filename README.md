@@ -1,7 +1,8 @@
 # git-cheatsheet
 
-#### identify your self to git ####
+#### identify yourself to git ####
  ```
+ # Tell git who you are so that your name appears properly in git commit changelog
  git config --global user.name "MyFirstName MyLastName"
  git config --global user.email myemailaddress@example.com
 
