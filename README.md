@@ -1,5 +1,14 @@
 # git-cheatsheet
 
+#### identify your self to git ####
+ ```
+ git config --global user.name "MyFirstName MyLastName"
+ git config --global user.email myemailaddress@example.com
+
+ # And tell git you want branch matching semantics
+ git config --global push.default matching
+ ```
+
 #### git topic/story branch workflow ####
 git maintainers maintain git with this topic branch workflow https://stuff.mit.edu/afs/sipb/project/git/git-doc/howto/maintain-git.html
 
