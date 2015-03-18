@@ -149,3 +149,12 @@ Upload your ssh public key to gitlab (same step as step 1 in [how to checkout ls
  # osx:
  brew install tig
  ```
+
+#### random snippets ####
+
+##### commit modified files only #####
+I have modified files that are known to git and some fils that aren't yet in git.  I want to commit only the modified files.
+ ```
+ # commit modified files only
+ git diff --name-only --diff-filter=M | xargs git add
+ ```
