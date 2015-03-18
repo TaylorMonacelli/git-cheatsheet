@@ -88,6 +88,13 @@ On server do final check of the integration branch which has the card71 story (a
 #### in trello.com, how can you see the card numbers? ####
 https://trello.com/c/PkIrgKzd/36-show-card-numbers
 
+A lot of people want this feature.
+https://trello.com/c/OvKHeqvC/1003-short-ids-for-cards
+
+Always want to know what the IDs for your Trello cards are? This plugin will display the ID for each card!
+
+This chrome plugin allows you to see the card numbers when looking at the board: https://userstyles.org/styles/61623/trello-card-ids
+
 ### how can I squash/condense the commits on my story branch? ###
  ```
  cd lsweb
@@ -169,3 +176,25 @@ I have modified files that are known to git and some fils that aren't yet in git
  # ok, i'm on a test branch and those files look right lets add them to git
  git ls-files -o --directory . | xargs git add
  ```
+
+##### t1 needs repo #####
+Do this only once to clone repo to t1
+ ```
+ ssh t1
+ ssh-keygen
+ cat ~/.ssh/id_rsa.pub # copy to clipboard over ssh
+ # manually copy this to your gitlab profile, same step as step 1 in [how to checkout lsweb](#how-to-checkout-lsweb)
+ cd /c
+ rm -rf .git
+ git init
+ git remote add origin git@gitlab.com:streambox/lsweb.git
+ git fetch
+ # next, be careful here: you're doing a hard reset which will destroy
+ # any changes on t1, but that doesn't matter since you always commit
+ # all of your changes to gitlab anyway, thats a mutal agreement among
+ # team members
+ git checkout --track origin/LS_Stable_v3.0
+ # or git checkout --track origin/lance_tools
+ ```
+
+Now that t1:/c/.git exists...
