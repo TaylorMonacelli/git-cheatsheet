@@ -163,7 +163,7 @@ I have modified files that are known to git and some fils that aren't yet in git
  ```
  # show me the files that git doesn't know aobut
  git status
- git ls-files -o --directory
+ git ls-files -o --directory .
  # verify what branch I'm on, so I don't commit new files to master
  git branch
  # ok, i'm on a test branch and those files look right lets add them to git
