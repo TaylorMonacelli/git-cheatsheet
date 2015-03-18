@@ -198,3 +198,35 @@ Do this only once to clone repo to t1
  ```
 
 Now that t1:/c/.git exists...
+
+##### I just borked t1 how can I bisect to find the commit that broke t1? #####
+Use git bisect
+ ```
+ ssh t1
+ cd /c
+ git checkout lance_tools
+ git reset --hard origin/lance_tools
+ # test with web browser, something is broken, page doesn't load, ok bisect to find the version that broke it
+ git bisect start
+ git bisect bad
+ git checkout lance_tools~100 # I think it broke somewhere between most recent commit and roughly 100 commits back
+ # test with web browser, nope, still broken
+ git checkout lance_tools~200 # ok, maybe it broke 200 commits ago
+ # test with web browser, yes, now it works, ok
+
+ # tell git this version works and git will start bisecting between lance_tools HEAD and lance_tools~200
+ git bisect good
+
+ # test with web browser, yes this version is ok
+ git bisect good
+
+ # observe git bisects again
+ # test with web browser, ok, this version is broken
+ git bisect bad
+
+ # repeat  git bisect good, manually test, git bisect bad, manually test, ...
+
+ # when you're done, then reset
+ git bisect reset
+ ```
+
