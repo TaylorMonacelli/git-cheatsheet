@@ -229,4 +229,3 @@ Use git bisect
  # when you're done, then reset
  git bisect reset
  ```
-
