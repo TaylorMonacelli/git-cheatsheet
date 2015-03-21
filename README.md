@@ -34,8 +34,8 @@ On laptop:
  # create a personal/temporary integration branch (potential updates).
  # We will use this integration branch later.
  cd lsweb
- git checkout -B lancepu origin/LS_Stable_v3.0
- git push --set-upstream gitlab lancepu
+ git checkout -B pu.lance origin/LS_Stable_v3.0
+ git push --set-upstream gitlab pu.lance
 
  # fork off stable branch:
  git checkout -B card71 origin/LS_Stable_v3.0
@@ -44,7 +44,7 @@ On laptop:
 
 On server (ssh t3 for example):
  ```
- cd /c && git fetch && git reset --hard origin/card71
+ cd /c && git fetch && git checkout card71 && git reset --hard origin/card71
  ```
 
 On laptop:
@@ -69,7 +69,7 @@ On laptop:
 
 On server:
  ```
- cd /c && git fetch && git reset --hard origin/card71
+ cd /c && git fetch && git checkout card71 && git reset --hard origin/card71
  ```
 
 ...repeat edit/test cycle until you're reasonably confident card71 is solved.
@@ -77,13 +77,13 @@ On server:
 On laptop:
  ```
  # checkout your personal integration branch and merge your changes
- git checkout lancepu
+ git checkout pu.lance
  git merge card71
  ```
 
 On server do final check of the integration branch which has the card71 story (and possibly other stories)
  ```
- cd /c && git fetch && git reset --hard origin/lancepu
+ cd /c && git fetch && git checkout pu.lance && git reset --hard origin/pu.lance
  ```
 #### in trello.com, how can you see the card numbers? ####
 https://trello.com/c/PkIrgKzd/36-show-card-numbers
