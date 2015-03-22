@@ -1,5 +1,9 @@
 # git-cheatsheet
 
+https://github.com/dchelimsky/rspec/wiki/Topic-Branches
+
+
+
 #### identify yourself to git ####
  ```
  # Tell git who you are so that your name appears properly in git commit changelog
