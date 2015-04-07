@@ -171,7 +171,7 @@ I have modified files that are known to git and some fils that aren't yet in git
  ```
 
 ##### how can I rebase my bce story onto of masterls branch? #####
-This will "pick up" bce topic and plop it down on the tip of masterls.
+This will replace the bce foundation with masterls, so the bce story will sit on top of masterls branch.  It doesn't merge bce story onto masterls branch.
  ```
  git fetch
  [ -z "$(git show-ref refs/heads/masterls)" ] && git checkout -t origin/masterls || git checkout masterls
