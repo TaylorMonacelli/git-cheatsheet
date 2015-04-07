@@ -169,3 +169,15 @@ I have modified files that are known to git and some fils that aren't yet in git
  # ok, i'm on a test branch and those files look right lets add them to git
  git ls-files -o --directory . | xargs git add
  ```
+
+##### how can I rebase my bce story onto of masterls branch? #####
+This will "pick up" bce topic and plop it down on the tip of masterls.
+ ```
+ git fetch
+ [ -z "$(git show-ref refs/heads/masterls)" ] && git checkout -t origin/masterls || git checkout masterls
+ git reset --hard origin/masterls
+ git checkout bce
+ git reset --hard origin/bce
+ git rebase masterls
+ git push --force
+ ```
