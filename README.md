@@ -190,3 +190,6 @@ This will replace the bce foundation with masterls, so the bce story will sit on
  git checkout -b ghostfix origin/masterls
  git push -u origin ghostfix
  ```
+
+### How to delete a file from a Git repository, but not other users' working copies ###
+https://gist.github.com/TaylorMonacelli/87456105737b8dba7d7e
