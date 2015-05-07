@@ -24,7 +24,7 @@ git maintainers maintain git with this topic branch workflow https://stuff.mit.e
  git clone git@gitlab.com:streambox/lsweb.git
  cd lsweb
  git branch --all # inspect what branches where just cloned (for shits and giggles)
- git checkout --track remotes/origin/LS_Stable_v3.0
+ git checkout --track origin/LS_Stable_v3.0
 
  ```
 
@@ -34,11 +34,12 @@ On laptop:
  # create a personal/temporary integration branch (potential updates).
  # We will use this integration branch later.
  cd lsweb
- git checkout -B lancepu origin/LS_Stable_v3.0
+ git checkout -t origin/LS_Stable_v3.0
+ git checkout -B lancepu LS_Stable_v3.0
  git push --set-upstream gitlab lancepu
 
  # fork off stable branch:
- git checkout -B card71 origin/LS_Stable_v3.0
+ git checkout -B card71 LS_Stable_v3.0
  git push --set-upstream gitlab card71
  ```
 
@@ -187,7 +188,8 @@ This will replace the bce foundation with masterls, so the bce story will sit on
 2. add an upstream tracking branch so that future pulls/pushes will track with origin/ghostfix
 
  ```
- git checkout -b ghostfix origin/masterls
+ git checkout -t origin/masterls
+ git checkout -b ghostfix masterls
  git push -u origin ghostfix
  ```
 
