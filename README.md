@@ -190,10 +190,15 @@ This will replace the bce foundation with masterls, so the bce story will sit on
 
  ```
  git status #verify there aren't any uncommited changes
- git checkout -t origin/masterls || git checkout masterls # ||... in case masterls branch already exists
+ git fetch # see Note1 below
+ git checkout -t origin/masterls || git checkout masterls # See Note2
  git checkout -b ghostfix masterls
  git push -u origin ghostfix
  ```
+
+Note1: Bring my origin/masterls in sync with remote origin/masterls.  If I didn't do this, then I'd have to git checkout loginCSS && git rebase masterls later.
+
+Note2: '|| git checkout masterls' in case masterls branch already exists
 
 ### How to delete a file from a Git repository, but not other users' working copies ###
 https://gist.github.com/TaylorMonacelli/87456105737b8dba7d7e
