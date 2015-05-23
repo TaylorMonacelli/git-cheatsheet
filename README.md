@@ -196,7 +196,7 @@ This will replace the bce foundation with masterls, so the bce story will sit on
  git push -u origin ghostfix
  ```
 
-Note1: Bring my origin/masterls in sync with remote origin/masterls.  If I didn't do this, then I'd have to git checkout loginCSS && git rebase masterls later.
+Note1: Bring my origin/masterls in sync with remote origin/masterls.  If I didn't do this, then I'd have to git checkout ghostfix && git rebase masterls later.
 
 Note2: '|| git checkout masterls' in case masterls branch already exists
 
