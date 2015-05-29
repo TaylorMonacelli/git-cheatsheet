@@ -36,11 +36,11 @@ On laptop:
  cd lsweb
  git checkout -t origin/LS_Stable_v3.0
  git checkout -B lancepu LS_Stable_v3.0
- git push --set-upstream gitlab lancepu
+ git push --set-upstream origin lancepu
 
  # fork off stable branch:
  git checkout -B card71 LS_Stable_v3.0
- git push --set-upstream gitlab card71
+ git push --set-upstream origin card71
  ```
 
 On server (ssh t3 for example):
