@@ -28,65 +28,6 @@ git maintainers maintain git with this topic branch workflow https://stuff.mit.e
 
  ```
 
-#### workflow for a story branch ####
-On laptop:
- ```
- # create a personal/temporary integration branch (potential updates).
- # We will use this integration branch later.
- cd lsweb
- git fetch # bring my origin/LS_Stable_v3.0 in sync with remote LS_Stable_v3.0
- git checkout -t origin/LS_Stable_v3.0
- git checkout -B lancepu LS_Stable_v3.0
- git push --set-upstream origin lancepu
-
- # fork off stable branch:
- git checkout -B card71 LS_Stable_v3.0
- git push --set-upstream origin card71
- ```
-
-On server (ssh t3 for example):
- ```
- cd /c && git fetch && git reset --hard origin/card71
- ```
-
-On laptop:
- ```
- # make edits to php
- git commit -am "Keep column widths static when adding serial numbers"
- git push
- ```
-
-On server:
- ```
- cd /c && git pull
- # test changes using browser
- ```
-
-On laptop:
- ```
- # make edits to php
- git commit -am "Keep column widths static when adding serial numbers"
- git push
- ```
-
-On server:
- ```
- cd /c && git fetch && git reset --hard origin/card71
- ```
-
-...repeat edit/test cycle until you're reasonably confident card71 is solved.
-
-On laptop:
- ```
- # checkout your personal integration branch and merge your changes
- git checkout lancepu
- git merge card71
- ```
-
-On server do final check of the integration branch which has the card71 story (and possibly other stories)
- ```
- cd /c && git fetch && git reset --hard origin/lancepu
- ```
 #### in trello.com, how can you see the card numbers? ####
 https://trello.com/c/PkIrgKzd/36-show-card-numbers
 
