@@ -125,7 +125,7 @@ This will replace the bce foundation with masterls, so the bce story will sit on
  git push --force
  ```
 
-### I want to fix a production bug, how can I create a topic branch to do hack on in order to fix it? ###
+### I want to fix a production bug, how can I create a topic/story branch to do hack on in order to fix it? ###
 1. make sure there aren't any uncommited changes
 2. create topic branch based off origin/masterls, then
 3. add an upstream tracking branch so that future pulls/pushes will track with origin/ghostfix
