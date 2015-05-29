@@ -134,6 +134,7 @@ This will replace the bce foundation with masterls, so the bce story will sit on
  git status #verify there aren't any uncommited changes
  git fetch # see Note1 below
  git checkout -t origin/masterls || git checkout masterls # See Note2
+ git reset --hard origin/masterls
  git checkout -b ghostfix masterls
  git push -u origin ghostfix
  ```
