@@ -34,6 +34,7 @@ On laptop:
  # create a personal/temporary integration branch (potential updates).
  # We will use this integration branch later.
  cd lsweb
+ git fetch # bring my origin/LS_Stable_v3.0 in sync with remote LS_Stable_v3.0
  git checkout -t origin/LS_Stable_v3.0
  git checkout -B lancepu LS_Stable_v3.0
  git push --set-upstream origin lancepu
