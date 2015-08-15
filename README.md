@@ -145,3 +145,18 @@ Note2: '|| git checkout masterls' in case masterls branch already exists
 
 ### How to delete a file from a Git repository, but not other users' working copies ###
 https://gist.github.com/TaylorMonacelli/87456105737b8dba7d7e
+
+### I made a bunch of commits in various branchs and I want to know what branches might be going to be in next release ###
+Here are the branches that are in next integration branch
+ ```
+ git fetch --prune
+ git checkout --track origin/puls
+ git branch --all --merged
+ ```
+
+Here are the branches that are still lingering and haven't been merged
+ ```
+ git fetch --prune
+ git checkout --track origin/puls
+ git branch --all --no-merged
+ ```
