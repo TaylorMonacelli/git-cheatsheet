@@ -145,3 +145,54 @@ Note2: '|| git checkout masterls' in case masterls branch already exists
 
 ### How to delete a file from a Git repository, but not other users' working copies ###
 https://gist.github.com/TaylorMonacelli/87456105737b8dba7d7e
+
+### How to work with an integration branch to test 2 or more topics that aren't yet in master ###
+Example
+
+```
+# Create integration branch lm/puls starting at known good state masterls
+git checkout -b lm/puls masterls
+git push -u origin lm/puls
+
+# Merge lm/geoip into lm/puls and push to origin:
+git merge --no-edit --no-ff lm/geoip
+# Merge origin/lm/betterBeta into lm/puls:
+git merge --no-edit --no-ff origin/lm/betterBeta
+git push
+
+# Check out how far lm/puls has advanced ahead of masterls:
+# From this log its clear that lm/puls is just two topics ahead of masterls
+git log --decorate --pretty=tformat:'%h %d %ar %s' --first-parent --reverse -30
+
+# Test changes on tl1:
+ssh tl1
+cd /c
+git fetch --prune
+git checkout -- . # delete all uncommited changes in /c
+git checkout -t origin/lm/puls
+
+# Now back on iMac:
+# Oops, not fixed, yet, needs more changes to lm/geoip:
+git checkout lm/geoip
+# vi sls.php
+git commit -am "Puppies are edible as well as fun"
+git push # push lm/geoip to origin/lm/geoip
+
+# Test how it works in integration branch lm/puls to see how the two
+# topics lm/betterBeta and lm/geoip work together:
+git checkout lm/puls
+git merge --no-edit --no-ff lm/geoip
+git push # push lm/puls to origin/lm/puls
+
+# Repeat the cycle...over and over and over until you're confident
+
+# OK, i'm done with lm/geoip and I've observed it place nicely with
+# lm/betterBeta, now lets clean the history of lm/puls:
+git checkout lm/puls
+git reset --hard masterls
+git merge --no-edit --no-ff lm/geoip
+git merge --no-edit --no-ff lm/betterBeta
+
+# See how lm/puls is now just two topics ahead of masterls
+git log --decorate --pretty=tformat:'%h %d %ar %s' --first-parent --reverse -30
+```
