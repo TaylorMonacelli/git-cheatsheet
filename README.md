@@ -186,7 +186,7 @@ git push # push lm/puls to origin/lm/puls
 
 # Repeat the cycle...over and over and over until you're confident
 
-# OK, i'm done with lm/geoip and I've observed it place nicely with
+# OK, i'm done with lm/geoip and I've observed it plays nicely with
 # lm/betterBeta, now lets clean the history of lm/puls:
 git checkout lm/puls
 git reset --hard masterls
