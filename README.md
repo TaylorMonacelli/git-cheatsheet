@@ -196,3 +196,33 @@ git merge --no-edit --no-ff lm/betterBeta
 # See how lm/puls is now just two topics ahead of masterls
 git log --decorate --pretty=tformat:'%h %d %ar %s' --first-parent --reverse -30
 ```
+
+### Search for a branch that introduces a string ###
+From http://stackoverflow.com/a/5816177
+
+Here we are searching the git commits themselves for a string (not the
+git log messages).
+
+Examples
+```
+# Search for string in all branches
+git log --source --all -S <whatever>
+
+# Search for function writeLogToDrive(), but you don't remember the exact
+# name of function.  Param -G take regular expresssion:
+git log --decorate --pretty=tformat:'%h %d %an %ar %s' --source --all -i -G 'write.*log'
+```
+
+### Search for a commit log entry that contains a string ###
+From http://gitster.livejournal.com/30195.html
+
+Here we are searching the git log messages (not the git commits).
+
+```
+# This finds the commits that happened within the last month and mentioned
+# either frotz or nitfol in their commit log messages
+git log --grep=frotz --grep=nitfol --since=1.month
+
+# This will show commits that mention frotz and written by Linus
+git log --all-match --grep=frotz --author=Linus
+```
