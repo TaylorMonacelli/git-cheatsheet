@@ -211,6 +211,13 @@ git log --source --all -S <whatever>
 # Search for function writeLogToDrive(), but you don't remember the exact
 # name of function.  Param -G take regular expresssion:
 git log --decorate --pretty=tformat:'%h %d %an %ar %s' --source --all -i -G 'write.*log'
+
+# Ok, suppose you get back sha1 35c0a90, then what did the commit that
+# introduces that function look like:
+git show --color 35c0a90
+
+# and what branch(s) does that commit live in:
+git branch --all --contains 35c0a90
 ```
 
 ### Search for a commit log entry that contains a string ###
